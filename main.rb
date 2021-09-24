@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 def word_decoder(word)
   alphabet = { '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
                '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H',
@@ -16,12 +14,12 @@ end
 
 def message_decoder(message)
   decoded_words = []
-  words_arr = message.split(' ')
+  words_arr = message.split
   words_arr.each do |word|
     decoded_word = word_decoder(word)
     decoded_words.push(decoded_word)
   end
-  decoded_words.join('')
+  decoded_words.join
 end
 
 def morse_decoder(message)
@@ -32,7 +30,7 @@ def morse_decoder(message)
     decoded_messages.push(decoded_message)
     decoded_messages.push(' ')
   end
-  decoded_messages.join('')
+  decoded_messages.join
 end
 
 morse = '      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...
