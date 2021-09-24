@@ -1,17 +1,16 @@
-$alphabet = { '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
-              '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H',
-              '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L',
-              '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P',
-              '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
-              '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X',
-              '-.--': 'Y', '--..': 'Z' }
-
-$morse = '      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...
-'
+# frozen_string_literal: true
 
 def word_decoder(word)
+  alphabet = { '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
+               '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H',
+               '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L',
+               '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P',
+               '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
+               '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X',
+               '-.--': 'Y', '--..': 'Z' }
+
   result = word
-  result = $alphabet[word.to_sym] if word != '/'
+  result = alphabet[word.to_sym] if word != '/'
   result
 end
 
@@ -28,13 +27,15 @@ end
 def morse_decoder(message)
   decoded_messages = []
   messages_arr = message.split('   ')
-  messages_arr.each do |message|
-    decoded_message = message_decoder(message)
+  messages_arr.each do |msg|
+    decoded_message = message_decoder(msg)
     decoded_messages.push(decoded_message)
     decoded_messages.push(' ')
   end
   decoded_messages.join('')
 end
 
-translate = morse_decoder($morse)
+morse = '      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...
+'
+translate = morse_decoder(morse)
 puts translate
