@@ -26,11 +26,6 @@ If you want a copy of this file go to the github repository and download it from
 - [`git clone https://github.com/Metsanpeitto/ruby_morse_m4_w2`](https://github.com/Metsanpeitto/ruby_morse_m4_w2)
 
 
-### Live
-
-[Live](https://github.com/Metsanpeitto/ruby_morse_m4_w2/)
-
-
 ### Setup
 
 ```cmd
