@@ -22,16 +22,16 @@ def message_decoder(message)
   decoded_words.join
 end
 
-# def morse_decoder(message)
-#   decoded_messages = []
-#   messages_arr = message.split('   ')
-#   messages_arr.each do |msg|
-#     decoded_message = message_decoder(msg)
-#     decoded_messages.push(decoded_message)
-#     decoded_messages.push(' ')
-#   end
-#   decoded_messages.join
-# end
+def morse_decoder(message)
+  decoded_messages = []
+  messages_arr = message.split('   ')
+  messages_arr.each do |msg|
+    decoded_message = message_decoder(msg)
+    decoded_messages.push(decoded_message)
+    decoded_messages.push(' ')
+  end
+  decoded_messages.join
+end
 
 morse = '      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...
 '
