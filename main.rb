@@ -6,14 +6,13 @@
               '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X',
               '-.--': 'Y', '--..': 'Z' }
 
-def decode_word(word)
-  result = word
-  result = @alphabet[word.to_sym] if word != '/'
-  result
+def decode_char(letter_morse)
+  @alphabet[letter_morse.to_sym]
 end
 
-def decode_char(_letter_morse)
-  @alphabet[letterletter_morse_code]
+def decode_word(word_morse)
+  letters = word_morse.split.map { |letter_morse| decode_char(letter_morse) }
+  letters.join
 end
 
 def message_decoder(message)
@@ -37,7 +36,7 @@ def decode(message)
   decoded_messages.join
 end
 
-morse = '      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...
-'
-translate = decode(morse)
-puts translate
+p decode_char('.-')
+p decode_word('-- -.--')
+p decode('-- -.--   -. .- -- .')
+p decode('.-   -... --- -..-   ..-. ..- .-.. .-..    --- ..-.    .-. ..- -... .. . ...')
